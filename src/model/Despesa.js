@@ -34,6 +34,10 @@ const despesa = new mongoose.Schema({
     type: String,
     required: true,
   },
+  idComumParcelas: {
+    type: String,
+    required: true,
+  },
 });
 
 const Despesa = mongoose.model('Gastos', despesa);
