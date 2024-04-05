@@ -1,10 +1,11 @@
 const request = require('supertest');
-const app = require('../server');
+const { app, server } = require('../server');
 
 describe('Verifica servidor', () => {
   afterAll(() => {
-    app.close()
+    server.close();
   });
+
   test('Servidor online', async () => {
     const response = await request(app).get('/');
     expect(response.status).toBe(200);
