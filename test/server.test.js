@@ -1,9 +1,11 @@
 const request = require('supertest');
 const { app, server } = require('../server');
+const { default: mongoose } = require('mongoose');
 
 describe('Verifica servidor', () => {
-  afterAll(() => {
+  afterAll(async() => {
     server.close();
+    await mongoose.disconnect()
   });
 
   test('Servidor online', async () => {

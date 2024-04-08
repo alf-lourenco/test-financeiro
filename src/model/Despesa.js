@@ -12,7 +12,7 @@ const despesa = new mongoose.Schema({
 
   vencimento: {
     type: Date,
-    required: true,
+   default: mongoose.now()
   },
   quantidadeParcelas: {
     type: Number,
